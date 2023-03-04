@@ -8,7 +8,7 @@ public class Food : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        //add points
+        GameManager.Instance.AddPoints(points);
         Destroy(gameObject);
     }
 }
