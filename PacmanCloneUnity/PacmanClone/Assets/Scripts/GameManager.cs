@@ -4,8 +4,11 @@ using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Spawning Pellets")]
     [SerializeField] private GameObject pelletPrefab;
-    [SerializeField] private Tilemap tileMap;
+    [SerializeField] private GameObject superPelletPrefab;
+    [SerializeField] private Tilemap pelletTileMap;
+    [SerializeField] private Tilemap superPelletTilemap;
     [SerializeField] private List<Vector3> spawnPositions;
 
     public int currentScore { get; private set; }
@@ -24,13 +27,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        SpawnPellets();
+        SpawnPellets(pelletTileMap, pelletPrefab, spawnPositions);
+        spawnPositions.Clear();
+        SpawnPellets(superPelletTilemap, superPelletPrefab, spawnPositions);
     }
 
     public void AddPoints(int points)
@@ -39,9 +40,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Score is " + currentScore);
     }
 
-    private void SpawnPellets()
+    private void SpawnPellets(Tilemap tileMap, GameObject spawnObject, List<Vector3> spawnPosList)
     {
-        spawnPositions = new List<Vector3>();
+        spawnPosList = new List<Vector3>();
 
         for (int n = tileMap.cellBounds.xMin; n < tileMap.cellBounds.xMax; n++) // scan the tilemap from left to right for tiles
         {
@@ -54,16 +55,16 @@ public class GameManager : MonoBehaviour
                 // if there is a tile at localPlace, add it to the list
                 if (tileMap.HasTile(localPlace))
                 {
-                    spawnPositions.Add(place);
+                    spawnPosList.Add(place);
                 }
 
             }
         }
 
-        for (int i = 0; i < spawnPositions.Count; i++)
+        for (int i = 0; i < spawnPosList.Count; i++)
         {
             // spawn prefab at found tiles with half of tile size's offset (0.35/2 = 0.175)
-            Instantiate(pelletPrefab, new Vector3(spawnPositions[i].x + 0.175f, spawnPositions[i].y + 0.175f, spawnPositions[i].z), Quaternion.identity);
+            Instantiate(spawnObject, new Vector3(spawnPosList[i].x + 0.175f, spawnPosList[i].y + 0.175f, spawnPosList[i].z), Quaternion.identity);
         }
 
     }
