@@ -4,15 +4,17 @@ using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [Header("Spawning Pellets")]
     [SerializeField] private GameObject pelletPrefab;
     [SerializeField] private GameObject superPelletPrefab;
     [SerializeField] private Tilemap pelletTileMap;
     [SerializeField] private Tilemap superPelletTilemap;
-    [SerializeField] private List<Vector3> spawnPositions;
+    private List<Vector3> spawnPositions;
 
     public int currentScore { get; private set; }
-    public static GameManager Instance { get; private set; }
+   
 
     private void Awake()
     {
@@ -27,17 +29,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
+        //spawn pellets based on tilemap tiles, clear list and spawn super pellets
         SpawnPellets(pelletTileMap, pelletPrefab, spawnPositions);
         spawnPositions.Clear();
         SpawnPellets(superPelletTilemap, superPelletPrefab, spawnPositions);
     }
 
+    private void Update()
+    {
+        // if [amount of pellets on screen] == spawnPostions.Lenght / 2
+        // Instantiate fruit 
+    }
+
     public void AddPoints(int points)
     {
         currentScore += points;
-        Debug.Log("Score is " + currentScore);
     }
 
     private void SpawnPellets(Tilemap tileMap, GameObject spawnObject, List<Vector3> spawnPosList)

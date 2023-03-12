@@ -5,7 +5,8 @@ using TMPro;
 
 public class UIHandler : MonoBehaviour
 {
-    public TMP_Text scoreText;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text highScoreText;
 
     // Start is called before the first frame update
     void Start()
