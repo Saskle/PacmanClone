@@ -243,7 +243,7 @@ TextureImporter:
       213: -8705201061972266166
     second: scifitiles-sheet_79
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -260,9 +260,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -271,9 +274,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -294,10 +297,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -325,6 +333,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2028,9 +2048,89 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      scifitiles-sheet_38: -3662095370953180417
+      scifitiles-sheet_9: 6676463378734341842
+      scifitiles-sheet_28: 5394260708793239210
+      scifitiles-sheet_62: 5542227312021981567
+      scifitiles-sheet_67: 9185674951184582947
+      scifitiles-sheet_27: 712420888234101094
+      scifitiles-sheet_30: -6325989903468290448
+      scifitiles-sheet_45: -4064683893285106256
+      scifitiles-sheet_65: -2082418467756601158
+      scifitiles-sheet_31: -2859993894459015328
+      scifitiles-sheet_57: 3012461534212817894
+      scifitiles-sheet_75: 1384878893105680735
+      scifitiles-sheet_19: 8404393922576485932
+      scifitiles-sheet_23: 2185595112391361425
+      scifitiles-sheet_63: -5038537738444225552
+      scifitiles-sheet_2: -8445657104346920454
+      scifitiles-sheet_13: 533042767144426960
+      scifitiles-sheet_4: 1041382322464871745
+      scifitiles-sheet_53: -8199353733662818462
+      scifitiles-sheet_54: 7325278580354484870
+      scifitiles-sheet_5: 1148002418424063401
+      scifitiles-sheet_26: 1945153384431761461
+      scifitiles-sheet_1: 7966646015409238581
+      scifitiles-sheet_48: -8348315915317808921
+      scifitiles-sheet_34: -8923635223492898285
+      scifitiles-sheet_69: -4598930227923858371
+      scifitiles-sheet_61: -9036336870250319257
+      scifitiles-sheet_14: 8354488274505712959
+      scifitiles-sheet_66: 1988217309291890046
+      scifitiles-sheet_33: 6096762106478662658
+      scifitiles-sheet_43: 8880842411746191244
+      scifitiles-sheet_29: 7993647031301175558
+      scifitiles-sheet_11: 7986794028168140063
+      scifitiles-sheet_74: 9096094344690539222
+      scifitiles-sheet_32: -2670344782756201626
+      scifitiles-sheet_41: 9076584508071589913
+      scifitiles-sheet_50: -7007390489519442982
+      scifitiles-sheet_51: -3169661985271025034
+      scifitiles-sheet_70: -5831262542420461678
+      scifitiles-sheet_0: -7176883898404082396
+      scifitiles-sheet_35: -341571224994787645
+      scifitiles-sheet_36: 2785955147038035359
+      scifitiles-sheet_39: -7470134373473653689
+      scifitiles-sheet_49: -2216819685121397366
+      scifitiles-sheet_56: -3681469515825906060
+      scifitiles-sheet_71: 2389099822061960372
+      scifitiles-sheet_78: -8058549926347384990
+      scifitiles-sheet_8: -5955805486800030676
+      scifitiles-sheet_44: 4094182053278129913
+      scifitiles-sheet_7: -3139842797553561115
+      scifitiles-sheet_58: -1039579555357910979
+      scifitiles-sheet_18: 5399543443021712693
+      scifitiles-sheet_16: 5732778203375732277
+      scifitiles-sheet_17: -9200776475698282059
+      scifitiles-sheet_47: 2254163427145751830
+      scifitiles-sheet_24: -6207928591573198805
+      scifitiles-sheet_73: -5022024123657284811
+      scifitiles-sheet_3: -1534686412984272330
+      scifitiles-sheet_37: 1746785924213615758
+      scifitiles-sheet_25: 7309517897488134754
+      scifitiles-sheet_10: -3131630191868028924
+      scifitiles-sheet_68: -5474243953875236132
+      scifitiles-sheet_15: 5946157351408924570
+      scifitiles-sheet_64: -3269510507876829076
+      scifitiles-sheet_12: 6167072249572456260
+      scifitiles-sheet_59: -8232282360088077567
+      scifitiles-sheet_42: 7877373050710184834
+      scifitiles-sheet_79: -8705201061972266166
+      scifitiles-sheet_76: -321560551129088913
+      scifitiles-sheet_40: -5672444784056662403
+      scifitiles-sheet_72: 3259526090312491046
+      scifitiles-sheet_77: 6261159611999763350
+      scifitiles-sheet_46: -5072337738597377129
+      scifitiles-sheet_55: -2238657318629031788
+      scifitiles-sheet_20: 7777557952800589573
+      scifitiles-sheet_6: -5162734536991863232
+      scifitiles-sheet_52: -2664866669200964347
+      scifitiles-sheet_22: 1709118395578862581
+      scifitiles-sheet_60: 5648326395271833798
+      scifitiles-sheet_21: -2653138011838517701
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

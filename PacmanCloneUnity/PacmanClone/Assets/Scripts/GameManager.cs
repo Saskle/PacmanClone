@@ -31,16 +31,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //spawn pellets based on tilemap tiles, clear list and spawn super pellets
-        SpawnPellets(pelletTileMap, pelletPrefab, spawnPositions);
-        spawnPositions.Clear();
+        spawnPositions = new List<Vector3>();
+
         SpawnPellets(superPelletTilemap, superPelletPrefab, spawnPositions);
+        spawnPositions.Clear();
+        SpawnPellets(pelletTileMap, pelletPrefab, spawnPositions); 
     }
 
     private void Update()
     {
         // if [amount of pellets on screen] == spawnPostions.Lenght / 2
         // Instantiate fruit 
+        // max amout of score (not counting ghosts) = 2180
     }
 
     public void AddPoints(int points)
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPellets(Tilemap tileMap, GameObject spawnObject, List<Vector3> spawnPosList)
     {
-        spawnPosList = new List<Vector3>();
+        //spawnPosList = new List<Vector3>();
 
         for (int n = tileMap.cellBounds.xMin; n < tileMap.cellBounds.xMax; n++) // scan the tilemap from left to right for tiles
         {
