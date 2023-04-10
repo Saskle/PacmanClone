@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Ghost : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+
     private NavMeshAgent agent;
 
 
@@ -13,6 +14,8 @@ public class Ghost : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame

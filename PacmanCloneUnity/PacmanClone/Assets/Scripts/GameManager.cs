@@ -73,8 +73,8 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < spawnPosList.Count; i++)
         {
-            // spawn prefab at found tiles with half of tile size's offset (0.35/2 = 0.175)
-            Instantiate(spawnObject, new Vector3(spawnPosList[i].x + 0.175f, spawnPosList[i].y + 0.175f, spawnPosList[i].z), Quaternion.identity);
+            // spawn prefab at found tiles with half of tile size's offset (1/2 = 0.5)
+            Instantiate(spawnObject, new Vector3(spawnPosList[i].x + 0.5f, spawnPosList[i].y + 0.5f, spawnPosList[i].z), Quaternion.identity);
         }
 
     }
