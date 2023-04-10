@@ -7,6 +7,7 @@ public class UIHandler : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text highScoreText;
+    [SerializeField] private GameObject gameOverPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +19,24 @@ public class UIHandler : MonoBehaviour
     void Update()
     {
         UpdateScore();
-        
+
+        if (GameManager.Instance.gameOver)
+        {
+            gameOverPanel.SetActive(true);
+        }
+        else
+        {
+            gameOverPanel.SetActive(false);
+        }
     }
 
     private void UpdateScore()
     {
         scoreText.text = "Score: " + GameManager.Instance.currentScore;
+    }
+
+    public void RestartGame()
+    {
+        GameManager.Instance.RestartGame();
     }
 }
