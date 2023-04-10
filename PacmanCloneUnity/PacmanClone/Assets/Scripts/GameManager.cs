@@ -9,12 +9,14 @@ public class GameManager : MonoBehaviour
     [Header("Spawning Pellets")]
     [SerializeField] private GameObject pelletPrefab;
     [SerializeField] private GameObject superPelletPrefab;
+    [SerializeField] private GameObject fruitPrefab;
     [SerializeField] private Tilemap pelletTileMap;
     [SerializeField] private Tilemap superPelletTilemap;
     private List<Vector3> spawnPositions;
+    private int pelletAmount;
 
     public int currentScore { get; private set; }
-   
+    private int highScore;
 
     private void Awake()
     {
@@ -40,9 +42,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // if [amount of pellets on screen] == spawnPostions.Lenght / 2
-        // Instantiate fruit 
-        // max amout of score (not counting ghosts) = 2180
+        SpawnFruit();
+
     }
 
     public void AddPoints(int points)
@@ -77,5 +78,16 @@ public class GameManager : MonoBehaviour
             Instantiate(spawnObject, new Vector3(spawnPosList[i].x + 0.5f, spawnPosList[i].y + 0.5f, spawnPosList[i].z), Quaternion.identity);
         }
 
+    }
+
+    private void SpawnFruit()
+    {
+        // max amout of score (not counting ghosts) = 2180
+
+        pelletAmount = GameObject.FindGameObjectsWithTag("Food").Length;
+        if (pelletAmount == spawnPositions.Count / 2)
+        {
+            Instantiate(fruitPrefab);
+        }
     }
 }

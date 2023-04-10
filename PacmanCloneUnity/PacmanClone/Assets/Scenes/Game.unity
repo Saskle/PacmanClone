@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -408,6 +408,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483698861881153073, guid: c134cb741d8af9143b4a5c05b59fbb2c,
+        type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483698861881153073, guid: c134cb741d8af9143b4a5c05b59fbb2c,
+        type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483698861881153073, guid: c134cb741d8af9143b4a5c05b59fbb2c,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -669,6 +684,8 @@ MonoBehaviour:
     type: 3}
   superPelletPrefab: {fileID: 3825728323375857593, guid: 2d70652c7d8cdc041baca2021a054d9d,
     type: 3}
+  fruitPrefab: {fileID: 276447928290011070, guid: be44d31770c46b34ea6c61f17083c938,
+    type: 3}
   pelletTileMap: {fileID: 1956108304}
   superPelletTilemap: {fileID: 614065649}
 --- !u!4 &887420229
@@ -771,8 +788,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -960,7 +977,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.033333335
+  m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: ae6135fb7585081438380df97c71643e, type: 2}

@@ -28,9 +28,6 @@ public class Ghost : MonoBehaviour
         else
         {
             Debug.Log("agent is not on NavMesh");
-            agent.enabled = false;
-            agent.enabled = true;
-
         }
 
         
