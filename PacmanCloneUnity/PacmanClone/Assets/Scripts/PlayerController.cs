@@ -17,19 +17,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-
-
+        // don't allow player input if the game is over
+        if (!GameManager.Instance.gameOver)
+        {
+            Move();
+        }
     }
 
     private void Move()
     {
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
-
-        //rb.AddForce(Vector2.up * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
-        //rb.AddForce(Vector2.right * Input.GetAxis("Vertical") * speed * Time.deltaTime);
-
-        //transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
-        //transform.Translate(Vector3.up * Input.GetAxis("Vertical") * speed * Time.deltaTime);
     }
 }

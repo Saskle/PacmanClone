@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Tilemap superPelletTilemap;
     private List<Vector3> spawnPositions;
     private int pelletAmount;
-
+    
     public int currentScore { get; private set; }
     private int highScore;
     public bool gameOver;
@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
         // Singleton implementation
         if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            Debug.Log("More than one Game Manager!");
+            Destroy(gameObject);
         }
         else
         {
@@ -56,8 +57,6 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPellets(Tilemap tileMap, GameObject spawnObject, List<Vector3> spawnPosList)
     {
-        //spawnPosList = new List<Vector3>();
-
         for (int n = tileMap.cellBounds.xMin; n < tileMap.cellBounds.xMax; n++) // scan the tilemap from left to right for tiles
         {
             for (int p = tileMap.cellBounds.yMin; p < tileMap.cellBounds.yMax; p++) // scan from bottom to top for tiles
@@ -71,7 +70,6 @@ public class GameManager : MonoBehaviour
                 {
                     spawnPosList.Add(place);
                 }
-
             }
         }
 
@@ -80,12 +78,11 @@ public class GameManager : MonoBehaviour
             // spawn prefab at found tiles with half of tile size's offset (1/2 = 0.5)
             Instantiate(spawnObject, new Vector3(spawnPosList[i].x + 0.5f, spawnPosList[i].y + 0.5f, spawnPosList[i].z), Quaternion.identity);
         }
-
     }
 
     private void SpawnFruit()
     {
-        // max amout of score (not counting ghosts) = 2180
+        // max amout of score (not counting ghosts and fruit) = 2180
 
         pelletAmount = GameObject.FindGameObjectsWithTag("Food").Length;
         if (pelletAmount == spawnPositions.Count / 2)
@@ -96,6 +93,11 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        gameOver = false;
+        currentScore = 0;
+        spawnPositions.Clear();
+        Start();
+
         SceneManager.LoadScene(0);
     }
 }

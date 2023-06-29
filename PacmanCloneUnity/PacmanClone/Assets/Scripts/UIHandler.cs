@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -38,5 +39,8 @@ public class UIHandler : MonoBehaviour
     public void RestartGame()
     {
         GameManager.Instance.RestartGame();
+
+        //GameManager.Instance.gameOver = false;
+        //SceneManager.LoadScene("Game");
     }
 }
