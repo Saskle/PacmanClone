@@ -32,11 +32,15 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);    for some reason this fixes my restart issue, so lets keep it off!
     }
 
     private void Start()
     {
+        // GameObject.Find can only find active objects!
+        //pelletTileMap = GameObject.Find("PelletSpawnPoints").GetComponent<Tilemap>();
+        //superPelletTilemap = GameObject.Find("PelletSpawnPoints").GetComponent<Tilemap>();
+
         spawnPositions = new List<Vector3>();
 
         SpawnPellets(superPelletTilemap, superPelletPrefab, spawnPositions);
@@ -95,8 +99,11 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         currentScore = 0;
-        spawnPositions.Clear();
-        Start();
+
+        //spawnPositions.Clear();
+        //SpawnPellets(superPelletTilemap, superPelletPrefab, spawnPositions);
+        //spawnPositions.Clear();
+        //SpawnPellets(pelletTileMap, pelletPrefab, spawnPositions);
 
         SceneManager.LoadScene(0);
     }
