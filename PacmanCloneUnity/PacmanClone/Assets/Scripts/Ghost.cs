@@ -38,6 +38,7 @@ public class Ghost : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.gameOver = true;
+            agent.SetDestination(transform.position);
         }
     }
 }
