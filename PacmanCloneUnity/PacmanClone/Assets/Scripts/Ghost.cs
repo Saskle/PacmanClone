@@ -21,16 +21,9 @@ public class Ghost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agent.isOnNavMesh)
-        {
-            agent.SetDestination(player.transform.position);
-        }
-        else
-        {
-            Debug.Log("agent is not on NavMesh");
-        }
-
-        
+        // create a new method for this that will be overridden in each of the ghosts?
+        if (agent.isOnNavMesh) agent.SetDestination(player.transform.position);
+        else Debug.Log("agent is not on NavMesh");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
